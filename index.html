@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آپلود فایل</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>آپلود فایل به تلگرام</h1>
+    <form action="http://gr.vaxgame.top:3000/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <input type="text" name="chatId" placeholder="Chat ID خود را وارد کنید" required>
+        <button type="submit">آپلود فایل</button>
+    </form>
+</body>
+</html>
