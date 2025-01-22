@@ -6,7 +6,7 @@ const path = require('path');
 const axios = require('axios');
 
 // توکن ربات تلگرام
-const token = '6340289197:AAHgxnr3S1oUctd9oaiNGvEdEE5_mAyUjw8';
+const token = 'YOUR_TOKEN';
 
 // ایجاد ربات
 const bot = new TelegramBot(token, { polling: true });
@@ -16,7 +16,7 @@ const app = express();
 const port = 3000;
 
 // تنظیمات Multer برای آپلود فایل
-const uploadsDir = '/var/www/gr.vaxgame.top/uploads/';
+const uploadsDir = '/var/www/your_domin/uploads/';
 
 // ایجاد پوشه uploads اگر وجود ندارد
 if (!fs.existsSync(uploadsDir)) {
@@ -39,7 +39,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
     const fileName = req.file.originalname;
 
     // ایجاد لینک دانلود از سرور
-    const fileUrl = `https://gr.vaxgame.top/download/${path.basename(filePath)}`;
+    const fileUrl = `https://your_domin/download/${path.basename(filePath)}`;
     res.send(`فایل با موفقیت آپلود شد! لینک دانلود: ${fileUrl}`);
 
     // حذف فایل پس از ۱۲ ساعت
@@ -64,7 +64,7 @@ app.get('/download/:filename', (req, res) => {
 
 // شروع سرور
 app.listen(port, '0.0.0.0', () => {
-    console.log(`سرور در حال اجرا است در https://gr.vaxgame.top`);
+    console.log(`سرور در حال اجرا است در https://your_domin`);
 });
 
 // دستور /start
@@ -104,7 +104,7 @@ bot.on('document', async (msg) => {
 
         writer.on('finish', () => {
             // ارسال لینک دانلود از سرور
-            const downloadUrl = `https://gr.vaxgame.top/download/${fileName}`;
+            const downloadUrl = `https://your_domin/download/${fileName}`;
             bot.sendMessage(chatId, `فایل شما با موفقیت آپلود شد! لینک دانلود: ${downloadUrl}`);
 
             // حذف فایل پس از ۱۲ ساعت
